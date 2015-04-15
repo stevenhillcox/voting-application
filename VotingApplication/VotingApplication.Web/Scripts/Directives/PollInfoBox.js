@@ -7,19 +7,9 @@
 
     function PollInfoBox() {
 
-        function link(scope) {
-
-            activate();
-
-            function activate() {
-
-            }
-        }
-
         return {
             templateUrl: '/Routes/PollInfoBox',
             restrict: 'A',
-            link: link,
             scope: {
                 poll: '=',
             }
