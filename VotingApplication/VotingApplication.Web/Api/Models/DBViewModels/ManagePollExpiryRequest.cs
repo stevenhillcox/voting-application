@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace VotingApplication.Web.Api.Models.DBViewModels
 {
