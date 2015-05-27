@@ -14,9 +14,9 @@
         $scope.addChoice = addChoice;
         $scope.addChoiceAndClose = addChoiceAndClose;
         $scope.addAnotherToggle = true;
-
+                
         function addChoice(form) {
-            if (form.name === null) {
+            if (!form.name) {
                 return;
             }
 

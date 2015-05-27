@@ -324,7 +324,7 @@
     <Content Include="Images\Logo.png" />
     <Content Include="Scripts\Controllers\AddVoterOptionDialogController.js" />
     <Content Include="Scripts\Controllers\EditOptionDialogController.js" />
-    <Content Include="Scripts\Controllers\AddOptionDialogController.js" />
+    <Content Include="Scripts\Controllers\AddChoiceDialogController.js" />
     <Content Include="Scripts\Controllers\ManageVotersController.js" />
     <Content Include="Scripts\Controllers\PollTypeChangeController.js" />
     <Content Include="Scripts\Controllers\AccountRegisterController.js" />
