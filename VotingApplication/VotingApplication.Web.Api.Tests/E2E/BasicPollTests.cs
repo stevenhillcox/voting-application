@@ -49,7 +49,7 @@ namespace VotingApplication.Web.Tests.E2E
                     InviteOnly = false,
                     NamedVoting = false,
                     ChoiceAdding = false,
-                    HiddenResults = false
+                    DisabledRevoting = false
                 };
 
                 _context.Polls.Add(_defaultBasicPoll);
@@ -217,7 +217,7 @@ namespace VotingApplication.Web.Tests.E2E
                     InviteOnly = true,
                     NamedVoting = false,
                     ChoiceAdding = false,
-                    HiddenResults = false,
+                    DisabledRevoting = false,
                     Ballots = new List<Ballot>()
                     {
                         new Ballot() { TokenGuid = Guid.NewGuid() }
@@ -316,7 +316,7 @@ namespace VotingApplication.Web.Tests.E2E
                     InviteOnly = false,
                     NamedVoting = true,
                     ChoiceAdding = false,
-                    HiddenResults = false
+                    DisabledRevoting = false
                 };
 
                 _context.Polls.Add(_namedBasicPoll);
@@ -433,7 +433,7 @@ namespace VotingApplication.Web.Tests.E2E
                     InviteOnly = false,
                     NamedVoting = false,
                     ChoiceAdding = true,
-                    HiddenResults = false
+                    DisabledRevoting = false
                 };
 
                 _context.Polls.Add(_choiceAddingBasicPoll);
@@ -544,10 +544,10 @@ namespace VotingApplication.Web.Tests.E2E
         }
 
         [TestClass]
-        public class HiddenResultsConfiguration
+        public class DisabledRevotingConfiguration
         {
             private static ITestVotingContext _context;
-            private static Poll _hiddenResultsBasicPoll;
+            private static Poll _disabledRevotingBasicPoll;
             private static readonly Guid PollGuid = Guid.NewGuid();
             private static readonly string PollUrl = SiteBaseUri + "Poll/#/Vote/" + PollGuid;
             private IWebDriver _driver;
@@ -563,7 +563,7 @@ namespace VotingApplication.Web.Tests.E2E
                               Description = "A very long test description 2 that should exceed the character limit for descriptions" }};
 
                 // Open, Anonymous, No Choice Adding, Shown Results
-                _hiddenResultsBasicPoll = new Poll()
+                _disabledRevotingBasicPoll = new Poll()
                 {
                     UUID = PollGuid,
                     PollType = PollType.Basic,
@@ -574,10 +574,10 @@ namespace VotingApplication.Web.Tests.E2E
                     InviteOnly = false,
                     NamedVoting = false,
                     ChoiceAdding = false,
-                    HiddenResults = true
+                    DisabledRevoting = true
                 };
 
-                _context.Polls.Add(_hiddenResultsBasicPoll);
+                _context.Polls.Add(_disabledRevotingBasicPoll);
                 _context.SaveChanges();
             }
 
@@ -585,7 +585,7 @@ namespace VotingApplication.Web.Tests.E2E
             public static void ClassCleanup()
             {
                 PollClearer pollTearDown = new PollClearer(_context);
-                pollTearDown.ClearPoll(_hiddenResultsBasicPoll);
+                pollTearDown.ClearPoll(_disabledRevotingBasicPoll);
 
                 _context.Dispose();
             }
@@ -605,7 +605,7 @@ namespace VotingApplication.Web.Tests.E2E
             }
 
             [TestMethod, TestCategory("E2E")]
-            public void HiddenResultsPoll_DoesNotShowResultsButton()
+            public void DisabledRevotingPoll_DoesNotShowResultsButton()
             {
                 _driver.Navigate().GoToUrl(PollUrl);
                 IWebElement resultButton = _driver.FindElement(By.Id("results-button"));
