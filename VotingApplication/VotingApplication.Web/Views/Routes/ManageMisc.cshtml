@@ -34,10 +34,10 @@
         <div class="manage-section">
             <div>
                 <form class="form-section-block">
-                    <label for="DisabledRevoting">Results are hidden until a voter has voted</label>
+                    <label for="DisabledRevoting">Voters can only vote once</label>
                     <toggle-switch id="DisabledRevoting" ng-model="poll.DisabledRevoting" on-label="Yes" off-label="No"></toggle-switch>
-                    <small ng-if="poll.DisabledRevoting">Voters can not see the results until they have cast a vote</small>
-                    <small ng-if="!poll.DisabledRevoting">Voters can see results at any time</small>
+                    <small ng-if="poll.DisabledRevoting">Voters can not change thier vote</small>
+                    <small ng-if="!poll.DisabledRevoting">Voters can change thier vote</small>
                 </form>
             </div>
         </div>

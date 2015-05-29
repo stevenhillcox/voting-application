@@ -67,8 +67,12 @@
                 var voteData = response.data;
 
                 $scope.poll.Choices.forEach(function (opt) { opt.voteValue = 0; });
-
+                
                 if (voteData) {
+                    if ($scope.poll.DisabledRevoting && voteData.length > 0) {
+                        RoutingService.navigateToResultsPage($scope.pollId, $scope.token);
+                    }
+
                     voteData.forEach(function (vote) {
                         $scope.poll.Choices.forEach(function (choice) {
                             if (choice.Id === vote.ChoiceId) {

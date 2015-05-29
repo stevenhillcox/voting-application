@@ -612,6 +612,42 @@ namespace VotingApplication.Web.Tests.E2E
 
                 Assert.IsFalse(resultButton.IsVisible());
             }
+
+            [TestMethod, TestCategory("E2E")]
+            public void DisabledRevotingResults_DoesNotShowReturnToPollButton()
+            {
+                _driver.Navigate().GoToUrl(PollUrl);
+                IReadOnlyCollection<IWebElement> voteButtons = _driver.FindElements(By.Id("vote-button"));
+                voteButtons.First().Click();
+
+                VoteClearer voterClearer = new VoteClearer(_context);
+                voterClearer.ClearLast();
+
+                Assert.IsTrue(_driver.Url.StartsWith(SiteBaseUri + "Poll/#/Results/" + _disabledRevotingBasicPoll.UUID));
+
+                IWebElement resultButton = _driver.FindElement(By.Id("poll-button"));
+
+                Assert.IsFalse(resultButton.IsVisible());
+            }
+
+            [TestMethod, TestCategory("E2E")]
+            public void DisabledRevotingPollThatHasBeenVotedOn_RedirectsToResults()
+            {
+                _driver.Navigate().GoToUrl(PollUrl);
+                IReadOnlyCollection<IWebElement> voteButtons = _driver.FindElements(By.Id("vote-button"));
+                voteButtons.First().Click();
+
+                Assert.IsTrue(_driver.Url.StartsWith(SiteBaseUri + "Poll/#/Results/" + _disabledRevotingBasicPoll.UUID));
+
+                _driver.Navigate().GoToUrl(_driver.Url.Replace("Results", "Vote"));
+
+                Thread.Sleep(WaitTime);
+
+                Assert.IsTrue(_driver.Url.StartsWith(SiteBaseUri + "Poll/#/Results/" + _disabledRevotingBasicPoll.UUID));
+
+                VoteClearer voterClearer = new VoteClearer(_context);
+                voterClearer.ClearLast();
+            }
         }
     }
 }

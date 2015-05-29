@@ -141,6 +141,11 @@ namespace VotingApplication.Web.Api.Controllers
                     .Where(v => v.Ballot.TokenGuid == tokenGuid && v.Poll.UUID == pollId)
                     .ToList();
 
+                if (poll.DisabledRevoting && existingVotes.Count > 0)
+                {
+                    ThrowError(HttpStatusCode.BadRequest, "Re-voting not enabled for this poll");
+                }
+
                 foreach (Vote contextVote in existingVotes)
                 {
                     _metricHandler.HandleVoteDeletedEvent(contextVote, pollId);

@@ -75,9 +75,11 @@
         }
 
         function getPollSuccessCallback(pollData) {
-            if (pollData.ExpiryDateUtc) {
-                $scope.hasExpired = moment.utc(pollData.ExpiryDateUtc).isBefore(moment.utc());
+            if (pollData.data.ExpiryDateUtc) {
+                $scope.hasExpired = moment.utc(pollData.data.ExpiryDateUtc).isBefore(moment.utc());
             }
+
+            $scope.disabledRevoting = pollData.data.DisabledRevoting;
         }
 
         function activate() {
