@@ -44,10 +44,10 @@ namespace VotingApplication.Web.Api.Controllers
                     _metricHandler.HandleChoiceAddingChangedEvent(poll.ChoiceAdding, poll.UUID);
                 }
 
-                if (poll.DisabledRevoting != updateRequest.DisabledRevoting)
+                if (poll.RevotingDisabled != updateRequest.RevotingDisabled)
                 {
-                    poll.DisabledRevoting = updateRequest.DisabledRevoting;
-                    _metricHandler.HandleDisabledRevotingChangedEvent(poll.DisabledRevoting, poll.UUID);
+                    poll.RevotingDisabled = updateRequest.RevotingDisabled;
+                    _metricHandler.HandleRevotingDisabledChangedEvent(poll.RevotingDisabled, poll.UUID);
                 }
 
                 poll.LastUpdatedUtc = DateTime.UtcNow;

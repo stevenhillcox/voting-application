@@ -27,7 +27,7 @@ namespace VotingApplication.Data.Model
         SetInviteOnly = 103,
         SetNamedVoting = 104,
         SetOptionAdding = 105,
-        SetDisabledRevoting = 106,
+        SetRevotingDisabled = 106,
         AddOption = 200,
         UpdateOption = 201,
         DeleteOption = 202,

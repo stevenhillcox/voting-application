@@ -36,7 +36,7 @@ namespace VotingApplication.Data.Model
         public DateTime? ExpiryDateUtc { get; set; }
 
         public bool ChoiceAdding { get; set; }
-        public bool DisabledRevoting { get; set; }
+        public bool RevotingDisabled { get; set; }
 
         public DateTime LastUpdatedUtc { get; set; }
         public DateTime CreatedDateUtc { get; set; }

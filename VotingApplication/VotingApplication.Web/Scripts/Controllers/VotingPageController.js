@@ -69,7 +69,7 @@
                 $scope.poll.Choices.forEach(function (opt) { opt.voteValue = 0; });
                 
                 if (voteData) {
-                    if ($scope.poll.DisabledRevoting && voteData.length > 0) {
+                    if ($scope.poll.RevotingDisabled && voteData.length > 0) {
                         RoutingService.navigateToResultsPage($scope.pollId, $scope.token);
                     }
 

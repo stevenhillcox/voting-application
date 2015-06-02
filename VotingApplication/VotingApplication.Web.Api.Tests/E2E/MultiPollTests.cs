@@ -50,7 +50,7 @@ namespace VotingApplication.Web.Tests.E2E
                     InviteOnly = false,
                     NamedVoting = false,
                     ChoiceAdding = false,
-                    DisabledRevoting = false
+                    RevotingDisabled = false
                 };
 
                 _context.Polls.Add(_defaultMultiPoll);
@@ -201,7 +201,7 @@ namespace VotingApplication.Web.Tests.E2E
                     InviteOnly = true,
                     NamedVoting = false,
                     ChoiceAdding = false,
-                    DisabledRevoting = false,
+                    RevotingDisabled = false,
                     Ballots = new List<Ballot>()
                     {
                         new Ballot() { TokenGuid = Guid.NewGuid() }
@@ -300,7 +300,7 @@ namespace VotingApplication.Web.Tests.E2E
                     InviteOnly = false,
                     NamedVoting = true,
                     ChoiceAdding = false,
-                    DisabledRevoting = false
+                    RevotingDisabled = false
                 };
 
                 _context.Polls.Add(_namedMultiPoll);
@@ -414,7 +414,7 @@ namespace VotingApplication.Web.Tests.E2E
                     InviteOnly = false,
                     NamedVoting = false,
                     ChoiceAdding = true,
-                    DisabledRevoting = false
+                    RevotingDisabled = false
                 };
 
                 _context.Polls.Add(_choiceAddingMultiPoll);
@@ -524,10 +524,10 @@ namespace VotingApplication.Web.Tests.E2E
         }
 
         [TestClass]
-        public class DisabledRevotingConfiguration
+        public class RevotingDisabledConfiguration
         {
             private static ITestVotingContext _context;
-            private static Poll _disabledRevotingMultiPoll;
+            private static Poll _revotingDisabledMultiPoll;
             private static readonly Guid PollGuid = Guid.NewGuid();
             private static readonly string PollUrl = SiteBaseUri + "Poll/#/Vote/" + PollGuid;
             private IWebDriver _driver;
@@ -545,7 +545,7 @@ namespace VotingApplication.Web.Tests.E2E
                 };
 
                 // Open, Anonymous, No Choice Adding, Shown Results
-                _disabledRevotingMultiPoll = new Poll()
+                _revotingDisabledMultiPoll = new Poll()
                 {
                     UUID = PollGuid,
                     PollType = PollType.Multi,
@@ -556,10 +556,10 @@ namespace VotingApplication.Web.Tests.E2E
                     InviteOnly = false,
                     NamedVoting = false,
                     ChoiceAdding = false,
-                    DisabledRevoting = true
+                    RevotingDisabled = true
                 };
 
-                _context.Polls.Add(_disabledRevotingMultiPoll);
+                _context.Polls.Add(_revotingDisabledMultiPoll);
                 _context.SaveChanges();
             }
 
@@ -567,7 +567,7 @@ namespace VotingApplication.Web.Tests.E2E
             public static void ClassCleanup()
             {
                 PollClearer pollTearDown = new PollClearer(_context);
-                pollTearDown.ClearPoll(_disabledRevotingMultiPoll);
+                pollTearDown.ClearPoll(_revotingDisabledMultiPoll);
 
                 _context.Dispose();
             }
@@ -587,7 +587,7 @@ namespace VotingApplication.Web.Tests.E2E
             }
 
             [TestMethod, TestCategory("E2E")]
-            public void DisabledRevotingPoll_DoesNotShowResultsButton()
+            public void RevotingDisabledPoll_DoesNotShowResultsButton()
             {
                 _driver.Navigate().GoToUrl(PollUrl);
                 IWebElement resultButton = _driver.FindElement(By.Id("results-button"));

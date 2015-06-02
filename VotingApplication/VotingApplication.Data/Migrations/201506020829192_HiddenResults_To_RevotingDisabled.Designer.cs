@@ -7,13 +7,13 @@ namespace VotingApplication.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class HiddenResultsToDisabledRevoting : IMigrationMetadata
+    public sealed partial class HiddenResults_To_RevotingDisabled : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(HiddenResultsToDisabledRevoting));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(HiddenResults_To_RevotingDisabled));
         
         string IMigrationMetadata.Id
         {
-            get { return "201505291101222_HiddenResultsToDisabledRevoting"; }
+            get { return "201506020829192_HiddenResults_To_RevotingDisabled"; }
         }
         
         string IMigrationMetadata.Source

@@ -305,10 +305,10 @@ namespace VotingApplication.Web.Tests.Controllers
 
         [TestMethod]
         [ExpectedHttpResponseException(HttpStatusCode.BadRequest)]
-        public void PutWithDisabledRevotingNotAllowed()
+        public void PutWithRevotingDisabledNotAllowed()
         {
             // Arrange
-            _mainPoll.DisabledRevoting = true;
+            _mainPoll.RevotingDisabled = true;
 
             // Act
             _controller.Put(_mainUUID, _bobBallot.TokenGuid, new BallotRequestModel() { Votes = new List<VoteRequestModel>() { new VoteRequestModel() { ChoiceId = 1, VoteValue = 0 } } });
