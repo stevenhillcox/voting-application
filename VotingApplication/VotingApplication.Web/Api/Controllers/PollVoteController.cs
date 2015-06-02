@@ -143,7 +143,7 @@ namespace VotingApplication.Web.Api.Controllers
 
                 if (poll.DisabledRevoting && existingVotes.Count > 0)
                 {
-                    ThrowError(HttpStatusCode.BadRequest, "Re-voting not enabled for this poll");
+                    ThrowError(HttpStatusCode.BadRequest, "Votes for this poll can not be changed");
                 }
 
                 foreach (Vote contextVote in existingVotes)

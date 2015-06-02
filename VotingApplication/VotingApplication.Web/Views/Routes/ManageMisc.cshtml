@@ -24,7 +24,7 @@
         <div class="manage-section">
             <div>
                 <form class="form-section-block">
-                    <label for="ChoiceAdding">Voters can add their own choices</label>
+                    <label for="ChoiceAdding">Voters may add their own choices</label>
                     <toggle-switch id="ChoiceAdding" ng-model="poll.ChoiceAdding" on-label="Yes" off-label="No"></toggle-switch>
                     <small ng-if="poll.ChoiceAdding">Voters can add their own choices to the poll</small>
                     <small ng-if="!poll.ChoiceAdding">Voters cannot add their own choices to the poll</small>
@@ -34,10 +34,10 @@
         <div class="manage-section">
             <div>
                 <form class="form-section-block">
-                    <label for="DisabledRevoting">Voters can only vote once</label>
+                    <label for="DisabledRevoting">Voters may only vote once</label>
                     <toggle-switch id="DisabledRevoting" ng-model="poll.DisabledRevoting" on-label="Yes" off-label="No"></toggle-switch>
-                    <small ng-if="poll.DisabledRevoting">Voters can not change thier vote</small>
-                    <small ng-if="!poll.DisabledRevoting">Voters can change thier vote</small>
+                    <small ng-if="poll.DisabledRevoting">Voters can not change their vote</small>
+                    <small ng-if="!poll.DisabledRevoting">Voters can change their vote</small>
                 </form>
             </div>
         </div>
