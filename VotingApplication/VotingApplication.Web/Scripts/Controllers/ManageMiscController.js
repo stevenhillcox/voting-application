@@ -23,7 +23,7 @@
                 InviteOnly: $scope.poll.InviteOnly,
                 NamedVoting: $scope.poll.NamedVoting,
                 ChoiceAdding: $scope.poll.ChoiceAdding,
-                RevotingDisabled: $scope.poll.RevotingDisabled
+                IsElectionMode: $scope.poll.IsElectionMode
             };
 
             ManageService.updatePollMisc($routeParams.manageId, miscConfig)

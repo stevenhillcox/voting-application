@@ -11,6 +11,6 @@ namespace VotingApplication.Web.Api.Models.DBViewModels
         [Required]
         public bool ChoiceAdding { get; set; }
         [Required]
-        public bool RevotingDisabled { get; set; }
+        public bool IsElectionMode { get; set; }
     }
 }

@@ -42,7 +42,7 @@ namespace VotingApplication.Web.Tests.E2E
                 InviteOnly = false,
                 NamedVoting = false,
                 ChoiceAdding = false,
-                RevotingDisabled = false
+                IsElectionMode = false
             };
 
             _context.Polls.Add(_defaultPoll);

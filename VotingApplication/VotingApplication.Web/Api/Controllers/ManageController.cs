@@ -55,7 +55,7 @@ namespace VotingApplication.Web.Api.Controllers
                 NamedVoting = poll.NamedVoting,
                 ExpiryDateUtc = poll.ExpiryDateUtc,
                 ChoiceAdding = poll.ChoiceAdding,
-                RevotingDisabled = poll.RevotingDisabled
+                IsElectionMode = poll.IsElectionMode
             };
         }
 

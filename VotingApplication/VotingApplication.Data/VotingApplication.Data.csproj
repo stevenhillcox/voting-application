@@ -159,6 +159,10 @@
     <Compile Include="Migrations\201506020829192_HiddenResults_To_RevotingDisabled.Designer.cs">
       <DependentUpon>201506020829192_HiddenResults_To_RevotingDisabled.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506080918002_RevotingDisabledToIsElectionMode.cs" />
+    <Compile Include="Migrations\201506080918002_RevotingDisabledToIsElectionMode.Designer.cs">
+      <DependentUpon>201506080918002_RevotingDisabledToIsElectionMode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Creation\PollCreationHelper.cs" />
     <Compile Include="Model\Metric.cs" />
@@ -256,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506020829192_HiddenResults_To_RevotingDisabled.resx">
       <DependentUpon>201506020829192_HiddenResults_To_RevotingDisabled.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506080918002_RevotingDisabledToIsElectionMode.resx">
+      <DependentUpon>201506080918002_RevotingDisabledToIsElectionMode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

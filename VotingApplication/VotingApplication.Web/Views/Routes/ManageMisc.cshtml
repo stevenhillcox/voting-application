@@ -34,10 +34,10 @@
         <div class="manage-section">
             <div>
                 <form class="form-section-block">
-                    <label for="RevotingDisabled">Voters may only vote once</label>
-                    <toggle-switch id="RevotingDisabled" ng-model="poll.RevotingDisabled" on-label="Yes" off-label="No"></toggle-switch>
-                    <small ng-if="poll.RevotingDisabled">Voters can not change their vote</small>
-                    <small ng-if="!poll.RevotingDisabled">Voters can change their vote</small>
+                    <label for="IsElectionMode">Voters may only vote once</label>
+                    <toggle-switch id="IsElectionMode" ng-model="poll.IsElectionMode" on-label="Yes" off-label="No"></toggle-switch>
+                    <small ng-if="poll.IsElectionMode">Voters can not change their vote</small>
+                    <small ng-if="!poll.IsElectionMode">Voters can change their vote</small>
                 </form>
             </div>
         </div>

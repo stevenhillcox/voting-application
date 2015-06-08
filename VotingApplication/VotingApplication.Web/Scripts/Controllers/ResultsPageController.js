@@ -79,7 +79,7 @@
                 $scope.hasExpired = moment.utc(pollData.data.ExpiryDateUtc).isBefore(moment.utc());
             }
 
-            $scope.revotingDisabled = pollData.data.RevotingDisabled;
+            $scope.isElectionMode = pollData.data.IsElectionMode;
         }
 
         function activate() {

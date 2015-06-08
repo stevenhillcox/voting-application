@@ -141,7 +141,7 @@ namespace VotingApplication.Web.Api.Controllers
                     .Where(v => v.Ballot.TokenGuid == tokenGuid && v.Poll.UUID == pollId)
                     .ToList();
 
-                if (poll.RevotingDisabled && existingVotes.Count > 0)
+                if (poll.IsElectionMode && existingVotes.Count > 0)
                 {
                     ThrowError(HttpStatusCode.BadRequest, "Votes for this poll can not be changed");
                 }
