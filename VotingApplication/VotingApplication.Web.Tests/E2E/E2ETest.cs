@@ -51,7 +51,7 @@ namespace VotingApplication.Web.Tests.E2E
             get
             {
                 var driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-                driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(10));
+                driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(int.MaxValue));
                 //driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
 
                 return driver;
