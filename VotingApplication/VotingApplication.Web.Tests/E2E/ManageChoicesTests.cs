@@ -72,8 +72,8 @@ namespace VotingApplication.Web.Tests.E2E
             _context.SaveChanges();
 
             _driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-            
-            
+            _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(10));
+            //_driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
         }
 
         [TestCleanup]
