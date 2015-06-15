@@ -70,8 +70,8 @@ namespace VotingApplication.Web.Tests.E2E
             public virtual void TestInitialise()
             {
                 _driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(10));
-                _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
+                
+                
             }
 
             [TestCleanup]
@@ -225,8 +225,8 @@ namespace VotingApplication.Web.Tests.E2E
             public virtual void TestInitialise()
             {
                 _driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(10));
-                _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
+                
+                
             }
 
             [TestCleanup]
@@ -320,8 +320,8 @@ namespace VotingApplication.Web.Tests.E2E
             public virtual void TestInitialise()
             {
                 _driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(10));
-                _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
+                
+                
             }
 
             [TestCleanup]
@@ -434,8 +434,8 @@ namespace VotingApplication.Web.Tests.E2E
             public virtual void TestInitialise()
             {
                 _driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(10));
-                _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
+                
+                
             }
 
             [TestCleanup]
@@ -576,8 +576,8 @@ namespace VotingApplication.Web.Tests.E2E
             public virtual void TestInitialise()
             {
                 _driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(10));
-                _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
+                
+                
             }
 
             [TestCleanup]
