@@ -30,7 +30,7 @@ namespace VotingApplication.Web.Tests.E2E
             public virtual void TestInitialise()
             {
                 _driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(int.MaxValue));
+                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(9001));
                 //_driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
             }
 
@@ -332,7 +332,7 @@ namespace VotingApplication.Web.Tests.E2E
             public virtual void TestInitialise()
             {
                 _driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(int.MaxValue));
+                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(9001));
                 //_driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
             }
 
@@ -430,7 +430,7 @@ namespace VotingApplication.Web.Tests.E2E
             public virtual void TestInitialise()
             {
                 _driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(int.MaxValue));
+                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(9001));
                 //_driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
             }
 
@@ -552,7 +552,7 @@ namespace VotingApplication.Web.Tests.E2E
             public virtual void TestInitialise()
             {
                 _driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(int.MaxValue));
+                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(9001));
                 //_driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
             }
 
@@ -695,7 +695,7 @@ namespace VotingApplication.Web.Tests.E2E
             public virtual void TestInitialise()
             {
                 _driver = new NgWebDriver(new ChromeDriver(ChromeDriverDir));
-                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(int.MaxValue));
+                _driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(9001));
                 //_driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
             }
 
