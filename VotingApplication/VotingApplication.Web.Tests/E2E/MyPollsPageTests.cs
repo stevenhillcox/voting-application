@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 using VotingApplication.Data.Model;
 using VotingApplication.Web.Tests.E2E.Helpers;
 
@@ -11,66 +13,66 @@ namespace VotingApplication.Web.Tests.E2E
     {
         private static readonly Guid CreatedPollManageId = new Guid("FB74707A-C9D5-4B90-9F0C-D3280041B56C");
 
-        //[TestMethod]
-        //[TestCategory("E2E")]
-        //public void ExistingPoll_Manage_NavigatesToManagePollPage()
-        //{
-        //    using (IWebDriver driver = Driver)
-        //    {
-        //        using (var context = new TestVotingContext())
-        //        {
-        //            CreatePoll(context);
+        [TestMethod]
+        [TestCategory("E2E")]
+        public void ExistingPoll_Manage_NavigatesToManagePollPage()
+        {
+            using (IWebDriver driver = Driver)
+            {
+                using (var context = new TestVotingContext())
+                {
+                    CreatePoll(context);
 
-        //            SignIn(driver);
+                    SignIn(driver);
 
-        //            NavigateToMyPolls(driver);
+                    NavigateToMyPolls(driver);
 
-        //            IWebElement managePollButton = driver.FindElement(By.ClassName("poll-panel-button"));
-        //            managePollButton.Click();
+                    IWebElement managePollButton = driver.FindElement(By.ClassName("poll-panel-button"));
+                    managePollButton.Click();
 
-        //            WaitForPageChange();
+                    WaitForPageChange();
 
-        //            Poll newPoll = context.Polls.Single();
+                    Poll newPoll = context.Polls.Single();
 
-        //            string expectedUrl = SiteBaseUri + "Manage/#/Manage/" + newPoll.ManageId;
+                    string expectedUrl = SiteBaseUri + "Manage/#/Manage/" + newPoll.ManageId;
 
-        //            Assert.AreEqual(expectedUrl, driver.Url);
-        //        }
-        //    }
-        //}
+                    Assert.AreEqual(expectedUrl, driver.Url);
+                }
+            }
+        }
 
-        //[TestMethod]
-        //[TestCategory("E2E")]
-        //public void ExistingPoll_Repeat_NavigatesToNewPollManagePollPage()
-        //{
-        //    using (IWebDriver driver = Driver)
-        //    {
-        //        using (var context = new TestVotingContext())
-        //        {
-        //            CreatePoll(context);
+        [TestMethod]
+        [TestCategory("E2E")]
+        public void ExistingPoll_Repeat_NavigatesToNewPollManagePollPage()
+        {
+            using (IWebDriver driver = Driver)
+            {
+                using (var context = new TestVotingContext())
+                {
+                    CreatePoll(context);
 
-        //            SignIn(driver);
+                    SignIn(driver);
 
-        //            NavigateToMyPolls(driver);
+                    NavigateToMyPolls(driver);
 
-        //            ReadOnlyCollection<IWebElement> buttons = driver.FindElements(By.ClassName("poll-panel-button"));
-        //            Assert.AreEqual(2, buttons.Count);
+                    ReadOnlyCollection<IWebElement> buttons = driver.FindElements(By.ClassName("poll-panel-button"));
+                    Assert.AreEqual(2, buttons.Count);
 
-        //            IWebElement repeatButton = buttons[1];
-        //            repeatButton.Click();
+                    IWebElement repeatButton = buttons[1];
+                    repeatButton.Click();
 
-        //            WaitForPageChange();
+                    WaitForPageChange();
 
-        //            Poll newPoll = context
-        //                .Polls
-        //                .Single(p => p.ManageId != CreatedPollManageId);
+                    Poll newPoll = context
+                        .Polls
+                        .Single(p => p.ManageId != CreatedPollManageId);
 
-        //            string expectedUrl = SiteBaseUri + "Manage/#/Manage/" + newPoll.ManageId;
+                    string expectedUrl = SiteBaseUri + "Manage/#/Manage/" + newPoll.ManageId;
 
-        //            Assert.AreEqual(expectedUrl, driver.Url);
-        //        }
-        //    }
-        //}
+                    Assert.AreEqual(expectedUrl, driver.Url);
+                }
+            }
+        }
 
         private void SignIn(IWebDriver driver)
         {
