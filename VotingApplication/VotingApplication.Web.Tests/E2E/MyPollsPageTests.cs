@@ -83,6 +83,8 @@ namespace VotingApplication.Web.Tests.E2E
             IWebElement signInButton = FindElementById(driver, "signin-link");
             signInButton.Click();
 
+            WaitForPageChange();
+
             IWebElement emailInput = FindElementById(driver, "email");
             IWebElement passwordInput = FindElementById(driver, "password");
             IWebElement signInDialogButton = FindElementById(driver, "signIn-button-dialog");

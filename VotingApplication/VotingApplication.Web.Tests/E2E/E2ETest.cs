@@ -94,7 +94,7 @@ namespace VotingApplication.Web.Tests.E2E
 
         public void WaitForPageChange()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
         }
 
         public void CreateNewUser()
